@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { getOrderDetails } from '../store/orderDetails/orderDetailsAction';
+
 import DataTable from 'react-data-table-component';
 import styled from 'styled-components';
 import { FiExternalLink } from 'react-icons/fi';
+import axios from 'axios'
 
 
 const FirstColumnStyling = styled.div`
@@ -52,18 +52,27 @@ margin-top: 20px;
 
 
 export default function OrderDataTable() {
-  const dispatch = useDispatch();
-  const order_details = useSelector(
-    (state) => state.orderDetails.order_details
-  );
-  console.log(order_details);
 
-  const [orderData, setOrderData] = useState([]);
+
+  const [orderData, setOrderData] = useState( JSON.parse(localStorage.getItem("orders")) || []);
  
 
   useEffect(() => {
-    dispatch(getOrderDetails());
-    setOrderData(order_details);
+  
+ 
+
+     axios
+       .get('https://raw.githubusercontent.com/akshita151199/APIs/main/data')
+       .then((res) => {
+         if (res.data.data) {
+           localStorage.setItem('orders', JSON.stringify(res.data.data));
+              setOrderData(res.data.data);
+         }
+      
+       })
+       .catch((err) => {
+         console.log(err);
+       });
 
   }, []);
 
