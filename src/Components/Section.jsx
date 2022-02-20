@@ -1,9 +1,11 @@
 import React,{useState} from 'react';
 
 import styled from 'styled-components';
+import OrderDataTable from './OrderDataTable';
+import { BiWalletAlt } from 'react-icons/bi';
 
 const SectionStyling = styled.div`
-  margin: 30px 20px;
+  margin: 30px 30px;
 
   color: white;
 
@@ -15,13 +17,17 @@ const SectionStyling = styled.div`
   }
 
   .heading_right_div {
-    background-color: var(--secondary-text);
+    background-color: #353945;
     border-radius: 5px;
     // padding: 5px;
-    display:flex;
+    display: flex;
     flex-direction: row;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
+    margin: 0px;
+    p {
+      margin-bottom: 0rem;
+    }
   }
 
   .divider {
@@ -34,7 +40,7 @@ const SectionStyling = styled.div`
     position: relative;
     background-color: var(--light-color);
     border-radius: 10px;
-    margin: 20px 0px;
+    margin: 50px 0px;
     padding: 10px;
     color: var(--dark-color);
 
@@ -52,7 +58,7 @@ const SectionStyling = styled.div`
     top: -0px;
     right: -0px;
 
-    transform: translate(-50%, -50%);
+    transform: translate(40%, -50%);
     background-color: var(--primary-text);
     position: absolute;
     padding: 5px 10px;
@@ -114,6 +120,10 @@ const SectionStyling = styled.div`
       color: var(--primary-text-color);
       padding: 5px 10px;
       border-radius: 10px;
+      p{
+        margin-bottom: 0rem;
+        margin: 10px;
+      }
     }
   }
 
@@ -135,7 +145,6 @@ const SectionStyling = styled.div`
     color: var(--highlight-color);
 
     border: none;
- 
   }
 `;
 
@@ -159,8 +168,9 @@ export default function Section() {
             </div>
             <div className="heading_right_div">
               <p>
-                <span style={{padding:'10px'}}>0.2$XYZ</span>
-                <button>Tier 1</button>
+                <BiWalletAlt style={{ color: 'blue', margin: '10px' }} />
+                0.2$XYZ
+                <button style={{ margin: '10px' }}>Tier 1</button>
               </p>
             </div>
           </div>
@@ -172,7 +182,7 @@ export default function Section() {
             </p>
             <button className="tutorial_btn">Tutorials</button>
 
-            <p className='cross_btn'>
+            <p className="cross_btn">
               <span>
                 <i class="fa fa-times" aria-hidden="true"></i>
               </span>
@@ -207,7 +217,10 @@ export default function Section() {
 
           <div className="widgets_div">
             <div className="left_widget">
-              <h5>12.5% of fee</h5>
+              <h5>
+              
+                12.5% of fee
+              </h5>
               <p className="link_text">Your Referral Link for xyz</p>
               <div className="copy_link_div">
                 <p>
@@ -251,13 +264,13 @@ export default function Section() {
                 First Tab
               </span>
               <span
-                className={tab === 2 ? 'tab_active' : 'tab_span'}
+                className={tab === 2 ? 'active_tab' : 'tab_span'}
                 onClick={() => tabChange(2)}
               >
                 Second Tab
               </span>
             </p>
-            <div>{tab === 1 ? <div></div> : ''}</div>
+            <div>{tab === 1 ? <OrderDataTable /> : ' '}</div>
           </div>
         </div>
       </SectionStyling>

@@ -1,6 +1,14 @@
 import React, { useState } from 'react';
 import { HashLink as Link } from 'react-router-hash-link';
 import { BiChart } from 'react-icons/bi';
+import { BsGrid } from 'react-icons/bs';
+import {BsBarChartFill} from 'react-icons/bs'
+import { HiOutlineChartSquareBar } from 'react-icons/hi';
+import { VscPieChart } from 'react-icons/vsc';
+import { HiOutlineDatabase } from 'react-icons/hi';
+import { MdOutlineTableRows } from 'react-icons/md';
+import { FaShareAlt } from 'react-icons/fa';
+import { BsFileText } from 'react-icons/bs';
 import { HiCurrencyDollar } from 'react-icons/hi';
 import { TiChartBar } from 'react-icons/ti';
 import Switch from '@mui/material/Switch';
@@ -14,8 +22,9 @@ import styled from 'styled-components';
 
 const SidebarStyling = styled.div`
 position: sticky;
-  margin-left : 0px;
+  margin-left : 10px;
     margin-top: 30px;
+   
     border-right:"1px solid var(--secondary-text)";
     p{
       color: var(--primary-text);
@@ -60,15 +69,24 @@ ul {
     padding: 20px 20px;
   }
   }
+.section8{
+  margin: 4px 10px;
+  background-color:#353945;
+  color: white !important;
+  padding: 10px;
+  border-radius: 5px;
+
+}
 
 
+.buttons_div{
+ 
+margin-top: 60%;
 
-div{
-  margin: 20px;
+}
 
-
-  
-  button{
+.n_btn{
+  margin-left: 0px;
     background-color: var(--secondary-text);
     border-radius: 10px;
     border: none;
@@ -76,16 +94,18 @@ div{
 
 
   }
- 
-}
-
  .buy_btn{
+   margin-left: 10%;
     padding: 5px 10px;
     background-color: var(--button-bg-color);
     color: var(--button-text-color);
   }
-  div{ 
 
+
+
+  div{ 
+  
+  margin: 20px;
  button{
     background-color: var(--secondary-text);
     border-radius: 10px;
@@ -121,127 +141,99 @@ export default function Sidebar() {
 
 
   return (
-   
-      <SidebarStyling>
-        <div className="nav-menu">
-          <p>
-            <span className="name-dot">N</span> Name
-          </p>
-          <ul>
-            <li>
-              <Link to="#home">
-                {' '}
-                <i
-                  class="fa fa-th-large"
-                  aria-hidden="true"
-                  style={{ paddingRight: '20px' }}
-                ></i>
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link to="#section1">
-                <i
-                  class="fa fa-bar-chart"
-                  aria-hidden="true"
-                  style={{ paddingRight: '20px' }}
-                ></i>
-                Section 1
-              </Link>
-            </li>
-            <li>
-              <Link to="#section2">
-                <TiChartBar style={{ marginRight: '20px' }} /> Section 2
-              </Link>
-            </li>
-            <li>
-              <Link to="#section3">
-                {' '}
-                <HiCurrencyDollar style={{ marginRight: '20px' }} /> Section 3
-              </Link>
-            </li>
-            <li>
-              <Link to="#section4">
-                {' '}
-                <BiChart style={{ marginRight: '20px' }} />
-                Section 4
-              </Link>
-            </li>
-            <li>
-              <Link to="#section5">
-                <i
-                  class="fa fa-database"
-                  aria-hidden="true"
-                  style={{ paddingRight: '20px' }}
-                ></i>
-                Section 5
-              </Link>
-            </li>
-            <li>
-              <Link to="#section6">
-                <i
-                  class="fa fa-pie-chart"
-                  aria-hidden="true"
-                  style={{ paddingRight: '20px' }}
-                ></i>
-                Section 6
-              </Link>
-            </li>
-            <li>
-              <Link to="#section7">
-                <i
-                  class="fa fa-signal"
-                  aria-hidden="true"
-                  style={{ paddingRight: '20px' }}
-                ></i>
-                Section 7
-              </Link>
-            </li>
-            <li>
-              <Link to="#section8">
-                <i
-                  class="fa fa-share-alt"
-                  aria-hidden="true"
-                  style={{ paddingRight: '20px' }}
-                ></i>
-                Section 8
-              </Link>
-            </li>
-            <li>
-              <Link to="#documentation">
-                <i
-                  class="fa fa-stack-exchange"
-                  aria-hidden="true"
-                  style={{ paddingRight: '20px' }}
-                ></i>
-                Documentation
-              </Link>
-            </li>
-          </ul>
+    <SidebarStyling>
+      <div className="nav-menu">
+        <p>
+          <span className="name-dot">N</span> Name
+          <span style={{ marginLeft: '60px' }}>
+            <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+          </span>
+        </p>
+        <ul>
+          <li>
+            <Link to="#home">
+              {' '}
+              <BsGrid style={{ marginRight: '10px' }} />
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="#section1">
+              <HiOutlineChartSquareBar style={{ marginRight: '10px' }} />{' '}
+              Section 1
+            </Link>
+          </li>
+          <li>
+            <Link to="#section2">
+              <BsBarChartFill style={{ marginRight: '10px' }} /> Section 2
+            </Link>
+          </li>
+          <li>
+            <Link to="#section3">
+              {' '}
+              <HiCurrencyDollar style={{ marginRight: '10px' }} /> Section 3
+            </Link>
+          </li>
+          <li>
+            <Link to="#section4">
+              {' '}
+              <BiChart style={{ marginRight: '10px' }} />
+              Section 4
+            </Link>
+          </li>
+          <li>
+            <Link to="#section5">
+              <HiOutlineDatabase style={{ marginRight: '10px' }} />
+              Section 5
+            </Link>
+          </li>
+          <li>
+            <Link to="#section6">
+              <VscPieChart style={{ marginRight: '10px' }} />
+              Section 6
+            </Link>
+          </li>
+          <li>
+            <Link to="#section7">
+              <TiChartBar style={{ marginRight: '10px' }} />
+              Section 7
+            </Link>
+          </li>
+          <li className='section8'>
+            <Link to="#section8" style={{color:'white'}}>
+              <FaShareAlt style={{ color: 'white', marginRight:'10px' }} />
+              Section 8
+            </Link>
+          </li>
+          <li>
+            <Link to="#documentation">
+              <BsFileText style={{ marginRight: '10px' }} />
+              Documentation
+              
+            </Link>
+          </li>
+        </ul>
 
-          <div>
-            <button>
-              <span className="name-dot">N</span>$0.90
-            </button>
-            <button className="buy_btn">Buy $xyz</button>
-          </div>
+        <div className="buttons_div">
+          <button className="n_btn">
+            <span className="name-dot">N</span>$0.90
+          </button>
+          <button className="buy_btn">Buy $xyz</button>
         </div>
+      </div>
 
-        <div>
-          <p>
-            <span>
-              <i class="fa fa-globe" aria-hidden="true"></i>
-            </span>
+      <div>
+        <p>
+          <span>
+            <i class="fa fa-globe" aria-hidden="true"></i>
+          </span>
 
-            <Switch {...label} defaultChecked />
-          </p>
+          <Switch {...label} defaultChecked />
+        </p>
 
-          {/* <button onClick={handleToggle} type="button" className="toggle_btn">
-            {toggle && <i class="fa fa-moon-o" aria-hidden="true"></i>}
-            {!toggle && <i class="fa fa-sun-o" aria-hidden="true"></i>}
-          </button> */}
-        </div>
-      </SidebarStyling>
+      
+      </div>
+    </SidebarStyling>
     // </div>
   );
 }

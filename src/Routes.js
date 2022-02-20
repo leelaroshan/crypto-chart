@@ -1,34 +1,54 @@
 import React from 'react';
 import Header from './common/Header';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import Sidebar from './Components/Sidebar';
 import Section from './Components/Section';
+
+import LinkSection from './Components/LinkSection';
+
+import styled from 'styled-components';
+
+const ContainerStyling = styled.div`
+.container_div{ 
+display:grid;
+grid-template-columns: 0.7fr 2fr 1fr;
+}
+
+
+`;
 
 export default function routes() {
 
   return (
     <div style={{ backgroundColor: 'var(--primary-bg-color)' }}>
+
+      {/* ************************ Header****************** */}
       <Header />
+    
+      <ContainerStyling>
+        <div className="container_div">
 
-      <Container>
-        <Row>
-          <Col style={{ position: 'sticky' }}>
+          {/* **************** SIDE NAVBAR ************************ */}
+          <div style={{ borderRight: '1px solid gray' }}>
             <Sidebar />
-          </Col>
+          </div>
 
-          <Col xs={7} style={{ borderLeft: '1px solid gray' }}>
+
+          {/* ********************** MAIN SECTION ************************** */}
+
+          <div style={{ borderRight: '1px solid gray' }}>
             <section id="section8">
               <Section />
             </section>
-          </Col>
+          </div>
 
-          <Col xs={3} style={{ borderLeft: '1px solid gray' }}>
-            <h4>Here it is </h4>
-          </Col>
-        </Row>
-      </Container>
+
+        {/* ********************** LINK SECTION ******************************* */}
+          <div>
+            <LinkSection />
+          </div>
+        </div>
+
+      </ContainerStyling>
     </div>
   );
 }

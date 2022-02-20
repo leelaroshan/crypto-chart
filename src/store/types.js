@@ -1,0 +1,4 @@
+// ORDER DETAILS
+
+export const ORDER_DETAILS = 'ORDER_DETAILS';
+
