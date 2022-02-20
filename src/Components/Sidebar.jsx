@@ -12,6 +12,7 @@ import { BsFileText } from 'react-icons/bs';
 import { HiCurrencyDollar } from 'react-icons/hi';
 import { TiChartBar } from 'react-icons/ti';
 import Switch from '@mui/material/Switch';
+import { BsGlobe } from 'react-icons/bs';
 
  
 
@@ -70,7 +71,7 @@ ul {
   }
   }
 .section8{
-  margin: 4px 10px;
+  margin: 4px 0px;
   background-color:#353945;
   color: white !important;
   padding: 10px;
@@ -81,7 +82,8 @@ ul {
 
 .buttons_div{
  
-margin-top: 60%;
+margin-top: 100%;
+margin-left:0px;
 
 }
 
@@ -122,6 +124,43 @@ margin-top: 60%;
 
 }
  }
+
+
+ .toggle_switch{
+   
+    grid-column-gap: 10px;
+    background: transparent;
+    background: #4f4f4f;
+    background: var(--secondary-text);
+    border: transparent;
+    border-radius: 50px;
+
+    column-gap: 10px;
+    cursor: pointer;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    padding: 0.235rem;
+    place-items: center;
+    position: relative;
+    transition: all .3s linear;
+
+    
+ }
+
+ .toggle_div{
+   display:flex;
+   justify-content: flex-start;
+   align-items : baseline;
+
+ }
+.dot{
+  background: var(--highlight-color);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
 
 
 `;
@@ -165,20 +204,23 @@ export default function Sidebar() {
           </li>
           <li>
             <Link to="#section2">
-              <BsBarChartFill style={{ marginRight: '10px' }} /> Section 2
+              {' '}
+              {/* <TiChartBar style={{ marginRight: '10px' }} /> */}
+              <span class="material-icons-outlined"></span>
+              Section 2
             </Link>
           </li>
           <li>
             <Link to="#section3">
               {' '}
-              <HiCurrencyDollar style={{ marginRight: '10px' }} /> Section 3
+              <BiChart style={{ marginRight: '10px' }} />
+              Section 3
             </Link>
           </li>
           <li>
             <Link to="#section4">
               {' '}
-              <BiChart style={{ marginRight: '10px' }} />
-              Section 4
+              <HiCurrencyDollar style={{ marginRight: '10px' }} /> Section 4
             </Link>
           </li>
           <li>
@@ -195,13 +237,13 @@ export default function Sidebar() {
           </li>
           <li>
             <Link to="#section7">
-              <TiChartBar style={{ marginRight: '10px' }} />
+              <BsBarChartFill style={{ marginRight: '10px' }} />
               Section 7
             </Link>
           </li>
-          <li className='section8'>
-            <Link to="#section8" style={{color:'white'}}>
-              <FaShareAlt style={{ color: 'white', marginRight:'10px' }} />
+          <li className="section8">
+            <Link to="#section8" style={{ color: 'white' }}>
+              <FaShareAlt style={{ color: 'white', marginRight: '10px' }} />
               Section 8
             </Link>
           </li>
@@ -209,7 +251,6 @@ export default function Sidebar() {
             <Link to="#documentation">
               <BsFileText style={{ marginRight: '10px' }} />
               Documentation
-              
             </Link>
           </li>
         </ul>
@@ -218,20 +259,26 @@ export default function Sidebar() {
           <button className="n_btn">
             <span className="name-dot">N</span>$0.90
           </button>
-          <button className="buy_btn">Buy $xyz</button>
+          <button className="buy_btn">Buy $XYZ</button>
         </div>
       </div>
 
-      <div>
-        <p>
+      <div className='toggle_div'>
+        <p style={{marginRight: '30px'}}>
           <span>
-            <i class="fa fa-globe" aria-hidden="true"></i>
+            <BsGlobe size={30 }style={{ color: 'var(--secondary-text)' }} />
           </span>
-
-          <Switch {...label} defaultChecked />
         </p>
 
-      
+        <button className="toggle_switch">
+          <span>
+            <i class="fas fa-moon"></i>
+          </span>
+          <span className="dot"></span>
+          {/* <span>
+              <i class="fas fa-sun"></i>
+            </span> */}
+        </button>
       </div>
     </SidebarStyling>
     // </div>

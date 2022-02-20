@@ -3,6 +3,8 @@ import React,{useState} from 'react';
 import styled from 'styled-components';
 import OrderDataTable from './OrderDataTable';
 import { BiWalletAlt } from 'react-icons/bi';
+import dbimg from '../assets/bitdb.png';
+import savings from '../assets/savings.png';
 
 const SectionStyling = styled.div`
   margin: 30px 30px;
@@ -37,6 +39,8 @@ const SectionStyling = styled.div`
   }
 
   .popup {
+    display:flex;
+    
     position: relative;
     background-color: var(--light-color);
     border-radius: 10px;
@@ -176,11 +180,16 @@ export default function Section() {
           </div>
 
           <div className="popup">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipi vitae modi totam
-              repudiandae.{' '}
-            </p>
-            <button className="tutorial_btn">Tutorials</button>
+            <div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipi vitae modi totam
+                repudiandae.{' '}
+              </p>
+              <button className="tutorial_btn">Tutorials</button>
+            </div>
+            <div className="img_div">
+              <img src={dbimg} />
+            </div>
 
             <p className="cross_btn">
               <span>
@@ -194,7 +203,7 @@ export default function Section() {
           <div className="box_model">
             <h5>Your Rewards</h5>
             <div>
-              <h4>$ 0.26231428</h4>
+              <h4> $ 0.26231428</h4>
               <button className="custom_link">
                 <span>
                   <i
@@ -218,7 +227,8 @@ export default function Section() {
           <div className="widgets_div">
             <div className="left_widget">
               <h5>
-              
+                {' '}
+                <img src={savings} width="40px" height="50px" />
                 12.5% of fee
               </h5>
               <p className="link_text">Your Referral Link for xyz</p>
@@ -236,7 +246,11 @@ export default function Section() {
               </div>
             </div>
             <div className="right_widget">
-              <h5>12.5% of fee</h5>
+              <h5>
+                {' '}
+                <img src={savings} width="40px" height="50px" style={{marginLeft:'0px'}}/>
+                12.5% of fee
+              </h5>
               <p className="link_text">Your Referral Link for xyz</p>
               <div className="copy_link_div">
                 <p>
@@ -271,7 +285,6 @@ export default function Section() {
               </span>
             </p>
             <div>{tab === 1 ? <OrderDataTable /> : ' '}</div>
-            
           </div>
         </div>
       </SectionStyling>

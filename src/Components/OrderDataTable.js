@@ -92,7 +92,7 @@ export default function OrderDataTable() {
               {' '}
               {row.asset}
               <p>
-                <span>{row.type}</span>
+                <span style={{ paddingRight:'5px'}}>{row.type}</span>
                 <span className="chain_styling">
                   <img src={row.chain.img} />
                   {row.chain.name}
