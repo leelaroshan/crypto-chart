@@ -5,8 +5,8 @@ import { BiWalletAlt } from 'react-icons/bi';
 
 
 const LinkStyling = styled.div`
-  margin: 20px;
-  margin-left: 40px;
+  margin: 10px;
+  margin-left: 30px;
   color: white;
 
   .avalanche {
